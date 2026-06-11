@@ -143,6 +143,8 @@ func (p *DaytonaProvider) DataSources(ctx context.Context) []func() datasource.D
 		NewSandboxesDataSource,
 		NewSnapshotsDataSource,
 		NewVolumesDataSource,
+		NewWebhookAppPortalAccessDataSource,
+		NewWebhookInitializationStatusDataSource,
 	}
 }
 
