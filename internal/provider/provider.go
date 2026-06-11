@@ -176,6 +176,7 @@ func (p *DaytonaProvider) DataSources(ctx context.Context) []func() datasource.D
 		NewSandboxOrganizationDataSource,
 		NewSandboxParentDataSource,
 		NewSandboxPortPreviewURLDataSource,
+		NewSandboxQueryDataSource,
 		NewSandboxRegionQuotaDataSource,
 		NewSandboxSignedPortPreviewURLDataSource,
 		NewSandboxSSHAccessDataSource,
