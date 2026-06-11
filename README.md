@@ -23,6 +23,8 @@ This repository contains a Terraform Plugin Framework provider for [Daytona](htt
   - `daytona_activate_snapshot`
   - `daytona_deactivate_snapshot`
   - `daytona_expire_sandbox_signed_port_preview_url`
+  - `daytona_initialize_webhooks`
+  - `daytona_refresh_webhook_endpoints`
   - `daytona_revoke_sandbox_ssh_access`
 - Data sources:
   - `daytona_account_providers`

@@ -111,6 +111,8 @@ func (p *DaytonaProvider) Actions(ctx context.Context) []func() action.Action {
 		NewSandboxRevokeSSHAccessAction,
 		NewSnapshotActivateAction,
 		NewSnapshotDeactivateAction,
+		NewWebhookInitializeAction,
+		NewWebhookRefreshEndpointsAction,
 	}
 }
 

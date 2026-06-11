@@ -1,6 +1,6 @@
 # Daytona API Coverage
 
-This provider is audited against Daytona's generated OpenAPI client in `/Users/jwmoss/github/daytona/libs/api-client-go` at Daytona source commit `3a6dbc150` and client release `v0.187.0`.
+This provider is audited against Daytona's generated OpenAPI client in `/Users/jwmoss/github/daytona/libs/api-client-go` at Daytona source commit `7c66e95c8` and client release `v0.187.0`.
 
 The Terraform surface focuses on durable SaaS infrastructure, read-only discovery, and provider-defined actions where Daytona exposes an explicit operational action. Runtime operations, deprecated toolbox proxy operations, admin-only internals, and endpoints that only validate ephemeral tokens are intentionally excluded unless they map cleanly to Terraform state or Terraform's action model.
 
@@ -26,7 +26,7 @@ The Terraform surface focuses on durable SaaS infrastructure, read-only discover
 | Sandbox observability | `daytona_sandbox_logs`, `daytona_sandbox_traces`, `daytona_sandbox_trace_spans`, and `daytona_sandbox_metrics` cover bounded OpenTelemetry log, trace, span, and metric reads for a sandbox. |
 | Snapshots | `daytona_snapshot`, `daytona_snapshot`, `daytona_snapshots`, and `daytona_snapshot_build_logs_url` cover snapshot create/read/list/delete and build-log URL discovery. `daytona_activate_snapshot` and `daytona_deactivate_snapshot` expose snapshot activation as Terraform 1.14 provider-defined actions. |
 | Volumes | `daytona_volume`, `daytona_volume`, and `daytona_volumes` cover volume create/read/list/delete. |
-| Webhooks | `daytona_webhook_initialization_status` and `daytona_webhook_app_portal_access` cover webhook status and Svix app portal access. Initialization and endpoint refresh are operational actions and not exposed as Terraform state. |
+| Webhooks | `daytona_webhook_initialization_status` and `daytona_webhook_app_portal_access` cover webhook status and Svix app portal access. `daytona_initialize_webhooks` and `daytona_refresh_webhook_endpoints` expose webhook initialization and endpoint refresh as Terraform 1.14 provider-defined actions. |
 
 ## Intentionally Excluded
 
