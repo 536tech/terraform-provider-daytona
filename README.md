@@ -30,6 +30,7 @@ This repository contains a Terraform Plugin Framework provider for [Daytona](htt
   - `daytona_account_providers`
   - `daytona_api_key`
   - `daytona_api_keys`
+  - `daytona_authenticated_runner_sandboxes`
   - `daytona_config`
   - `daytona_current_api_key`
   - `daytona_current_user`
@@ -80,6 +81,7 @@ This repository contains a Terraform Plugin Framework provider for [Daytona](htt
   - `daytona_snapshot`
   - `daytona_snapshots`
   - `daytona_volume`
+  - `daytona_volume_by_name`
   - `daytona_volumes`
   - `daytona_webhook_app_portal_access`
   - `daytona_webhook_initialization_status`
