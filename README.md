@@ -42,6 +42,8 @@ This repository contains a Terraform Plugin Framework provider for [Daytona](htt
   - `daytona_sandboxes`
   - `daytona_snapshots`
   - `daytona_volumes`
+  - `daytona_webhook_app_portal_access`
+  - `daytona_webhook_initialization_status`
 
 The provider is backed by Daytona's generated Go OpenAPI client: `github.com/daytonaio/daytona/libs/api-client-go`.
 
