@@ -1,3 +1,23 @@
+## 0.3.0 (2026-06-11)
+
+BUG FIXES:
+
+- Reads of `daytona_organization_member_access`, `daytona_organization_role`, and `daytona_organization_invitation` no longer remove the resource from state when the API returns a transient error; only a genuine not-found does.
+- `daytona_runner`, `daytona_admin_runner`, `daytona_organization`, `daytona_sandbox`, and `daytona_volume` now persist state as soon as the remote object exists, so a failed follow-up call during create can no longer orphan the object or lose the one-time runner API key.
+- `daytona_region` persists state after each credential rotation, so a partial rotation failure can no longer lose a freshly regenerated credential or silently skip a pending rotation.
+- `daytona_sandbox` no longer refreshes `env` from the API (preventing inconsistent-result errors and unwanted replacement), keeps unconfigured `labels` and empty `network_allow_list` null, clears `network_allow_list` server-side when removed from configuration, and reconciles `desired_state` with the actual sandbox state on refresh so out-of-band stops surface as a plan diff.
+- `daytona_runner.draining` is now tracked in state instead of write-only; previously, changing only `draining` produced an empty plan and the drain request was never sent.
+- `daytona_api_key` no longer stores the masked key value from the list endpoint after import; `value` stays null when the real key is unavailable.
+- All API calls now have a 5-minute timeout instead of hanging indefinitely on a stalled connection.
+- The `daytona_sandboxes` and `daytona_snapshots` data sources paginate through all results instead of silently truncating at 100 items.
+- `daytona_organization_region_quota` destroy now warns that the quota remains active, since Daytona's organization API has no quota delete endpoint.
+- The provider warns when `DAYTONA_ACCESS_TOKEN` overrides an explicitly configured `api_key`.
+
+NOTES:
+
+- Release checksums are now GPG-signed, as required for Terraform Registry publication.
+- Added unit test coverage for the previously untested resources.
+
 ## 0.2.0 (2026-06-11)
 
 FEATURES:
