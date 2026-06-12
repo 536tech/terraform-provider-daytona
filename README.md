@@ -207,13 +207,39 @@ This repository also includes a reusable module example that can be consumed dir
 
 ```terraform
 module "daytona_sandbox" {
-  source = "github.com/jwmoss/terraform-provider-daytona//examples/modules/daytona-sandbox?ref=v0.2.0"
+  source = "github.com/jwmoss/terraform-provider-daytona//examples/modules/daytona-sandbox?ref=v0.3.0"
 
   name          = "agent-runtime"
   snapshot      = "daytonaio/sandbox:0.6.0"
   desired_state = "started"
 }
 ```
+
+## Use Cases
+
+Ephemeral sandboxes are usually created at runtime with the Daytona SDK; this
+provider's sweet spot is the durable platform layer those sandboxes depend on.
+[examples/use-cases](./examples/use-cases) contains complete configurations
+for:
+
+- **[self-hosted-region](./examples/use-cases/self-hosted-region)** — register
+  bring-your-own-compute regions and runners natively, with real destroy,
+  drift detection, and credential rotation (replaces the `terracurl` calls in
+  [daytonaio/terraform-modules](https://github.com/daytonaio/terraform-modules)).
+- **[organization-governance](./examples/use-cases/organization-governance)** —
+  custom roles, member access, invitations, region quotas, and OpenTelemetry
+  export as reviewable code.
+- **[golden-snapshot-pipeline](./examples/use-cases/golden-snapshot-pipeline)** —
+  registry credentials, versioned golden snapshots, and shared volumes that
+  SDK-created sandboxes consume.
+- **[ci-service-api-keys](./examples/use-cases/ci-service-api-keys)** —
+  least-privilege, expiring API keys for CI systems and service accounts.
+
+The use-case examples rely only on resources and data sources, so they work
+with both Terraform and OpenTofu. Provider-defined actions are an optional
+extra that require Terraform 1.14+ and are not supported by OpenTofu; where an
+action has a resource equivalent (for example sandbox start/stop via the
+`daytona_sandbox.desired_state` attribute), prefer the resource.
 
 ## Development
 

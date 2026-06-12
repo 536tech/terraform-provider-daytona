@@ -13,3 +13,4 @@ Additional runnable examples live outside the documentation generator paths:
 
 * **modules/daytona-sandbox** reusable module for provisioning a Daytona sandbox and optional persistent volume
 * **github-source-module** root example that consumes the module from this public GitHub repository
+* **use-cases** complete configurations for the platform-infrastructure side of Daytona (region/runner registration, organization governance, golden snapshots, service API keys); resources and data sources only, so they also work with OpenTofu
