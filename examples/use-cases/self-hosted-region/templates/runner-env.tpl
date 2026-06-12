@@ -1,0 +1,4 @@
+DAYTONA_RUNNER_ID=${runner_id}
+DAYTONA_RUNNER_NAME=${runner_name}
+DAYTONA_RUNNER_API_KEY=${api_key}
+DAYTONA_RUNNER_REGION=${region}
