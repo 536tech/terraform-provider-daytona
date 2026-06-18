@@ -1,3 +1,17 @@
+## 0.8.0 (2026-06-18)
+
+BUG FIXES:
+
+- `daytona_region`: create now persists the created region state before the follow-up read, and returns a diagnostic if Daytona returns a successful response with no body.
+- `daytona_organization_region_quota`: non-admin quota create now persists the composite ID and partial state before the follow-up read.
+- `daytona_sandbox`: removing `auto_stop_interval`, `auto_archive_interval`, or `auto_delete_interval` now sends the corresponding clear/reset request to Daytona instead of skipping the update.
+- Data sources now return diagnostics for empty successful API responses instead of panicking. This covers current API key, sandboxes, snapshots, config, current user, organization usage, organization audit logs, jobs, organization OpenTelemetry config, and admin audit logs.
+
+NOTES:
+
+- Bumped the Daytona Go API client to `v0.188.0`.
+- Repointed the Go module path, provider address, README, examples, and metadata to the `536tech` namespace, and added registry verification for removing the deprecated `jwmoss/daytona` namespace.
+
 ## 0.7.0 (2026-06-17)
 
 NOTES:
