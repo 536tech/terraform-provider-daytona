@@ -1,3 +1,17 @@
+## 0.9.0 (2026-06-23)
+
+FEATURES:
+
+- Added runner/job-worker integration coverage: `daytona_job_poll`, `daytona_update_job_status`, `daytona_authenticated_runner`, and `daytona_runner_healthcheck`.
+- Added `daytona_update_sandbox_state` for runner/control-plane integrations that need to report sandbox state directly.
+- Added raw build-log data sources for sandbox and snapshot builds. Daytona marks these endpoints deprecated; the existing build-log URL data sources remain preferred for new Terraform configurations.
+
+NOTES:
+
+- Bumped the Daytona Go API client to `v0.189.0`.
+- Added an OpenAPI endpoint coverage test so non-deprecated generated SDK methods fail tests when they are not covered by the provider or explicitly classified.
+- Updated GitHub install and module examples to `v0.9.0`.
+
 ## 0.8.1 (2026-06-23)
 
 NOTES:
