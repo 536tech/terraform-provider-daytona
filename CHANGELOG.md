@@ -1,4 +1,4 @@
-## Unreleased
+## 0.10.0 (2026-06-23)
 
 BREAKING CHANGES:
 
@@ -10,6 +10,7 @@ NOTES:
 
 - Removed the OpenAPI endpoint coverage matrix and test.
 - Trimmed generic collection and sandbox relationship data source outputs to stable identity fields.
+- Updated GitHub install and module examples to `v0.10.0`.
 
 ## 0.9.0 (2026-06-23)
 

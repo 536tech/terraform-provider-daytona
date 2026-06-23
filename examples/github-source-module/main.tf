@@ -9,7 +9,7 @@ terraform {
 provider "daytona" {}
 
 module "daytona_sandbox" {
-  source = "github.com/536tech/terraform-provider-daytona//examples/modules/daytona-sandbox?ref=v0.9.0"
+  source = "github.com/536tech/terraform-provider-daytona//examples/modules/daytona-sandbox?ref=v0.10.0"
 
   name          = "agent-runtime"
   snapshot      = "daytonaio/sandbox:0.6.0"
